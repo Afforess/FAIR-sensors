@@ -1,0 +1,13 @@
+dependencies:
+    pre:
+        - sudo apt-get update; sudo apt-get install lua5.2
+test:
+    override:
+        - make
+
+
+deployment:
+    release-candidate:
+        branch: master
+        commands:
+            - mv build/*.zip $CIRCLE_ARTIFACTS
